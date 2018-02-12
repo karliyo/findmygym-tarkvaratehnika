@@ -1,0 +1,1 @@
+# findmygym-tarkvaratehnika
