@@ -1,0 +1,71 @@
+.App {
+	text-align: center;
+}
+
+.Header {
+    width: 100%;
+    border-bottom: 1px solid #E0E0E0;
+    background-color: #A0A0A0;
+    display: flex;
+}
+
+.Header-left > logo {
+	height: 10%;
+}
+
+.Header-nav-right {
+	float: right;
+}
+
+.Header-left {
+	float: left;
+}
+
+.Header-left > img {
+	padding-left: 5px;
+	padding-top: 5px;
+	height: auto;
+}
+
+.Header-center {
+	float: center;
+}
+
+.App-title {
+	font-size: 1.5em;
+}
+
+.Mid-container {
+	/* background-color: #b11; */
+	display: flex;
+	height: 100%;
+	/* background-image: './components/assets/bg.jpg'; */
+}
+
+#Mid-search {
+	flex: 1;
+	float: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	/* border-bottom: 1px solid #E0E0E0; */
+}
+
+#Mid-filter {
+	background-color: #0000ff;
+	height: 100%;
+	padding-top: 50px;
+	/* border-bottom: 1px solid #E0E0E0; */
+}
+
+.Gmap-container {
+	height: 45%;
+	/* border-top: 1px solid #000; */
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+@keyframes App-logo-spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
