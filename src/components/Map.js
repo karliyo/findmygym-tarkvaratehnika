@@ -13,7 +13,7 @@ class Map extends Component {
               }
           }
           defaultZoom = {
-              10
+              5
           }
         >
         </GoogleMap>
