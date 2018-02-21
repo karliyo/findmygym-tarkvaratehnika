@@ -1,1 +1,1 @@
-# findmygym-tarkvaratehnika
+# findmygym-tarkvaratehnika.
