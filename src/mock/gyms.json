@@ -1,0 +1,64 @@
+{
+  "gyms": [
+  {
+    "id": 1,
+    "name": "TTÜ Spordihoone",
+    "website": "https://www.ttu.ee/ttusport",
+    "image": "",
+	"address": "Männiliiva tee",
+	"city": "Tallinn",
+	"county": "Harjumaa",
+	"country": "Estonia",
+	"latitude": 59.39358999999999,
+    "longitude": 24.67903590000003,
+    "added_date": "24 February 2018"
+  }, {
+    "id": 2,
+    "name": "Arctic Sport",
+    "website": "http://arcticsport.ee",
+    "image": "",
+	"address": "Ehitajate tee 114b",
+	"city": "Tallinn",
+	"county": "Harjumaa",
+	"country": "Estonia",
+    "latitude": 59.4138169,
+    "longitude": 24.660114900000053,
+    "added_date": "24 February 2018"
+  }, {
+    "id": 3,
+    "name": "Golden Club",
+    "website": "http://www.goldenclub.ee/",
+    "image": "",
+	"address": "Sõjakooli 10",
+	"city": "Tallinn",
+	"county": "Harjumaa",
+	"country": "Estonia",
+    "latitude": 59.404084,
+    "longitude": 24.720739999999978,
+    "added_date": "24 February 2018"
+  }, {
+    "id": 4,
+    "name": "Audentes",
+    "website": "http://audentesfitness.ee/fitness/treeninguvoimalused/jousaal/",
+    "image": "",
+	"address": "Tondi 84",
+	"city": "Tallinn",
+	"county": "Harjumaa",
+	"country": "Estonia",
+    "latitude": 59.4048174,
+    "longitude": 24.71447379999995,
+    "added_date": "24 February 2018"
+  }, {
+    "id": 5,
+    "name": "Arigato",
+    "website": "http://arigato.ee",
+    "image": "",
+	"address": "Rannamõisa tee 3",
+	"city": "Tallinn",
+	"county": "Harjumaa",
+	"country": "Estonia",
+    "latitude": 59.4236658,
+    "longitude": 24.6376969,
+    "added_date": "24 February 2018"
+  }]
+}

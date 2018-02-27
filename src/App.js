@@ -4,6 +4,7 @@ import './components/SearchBox.css';
 import Map from './components/Map.js';
 import SearchBar from './components/SearchBar.js';
 import Header from './components/Header.js';
+import gymsMockJson from './mock/gyms.json';
 
 // const bgColors = { "Default": "#81b71a",
 //                     "Blue": "#00B1E1",
@@ -33,14 +34,30 @@ class App extends Component {
         this.setState({center: this.result.getAddress()});
     }
 
+    componentWillMount() {
+        this.setState({
+            markers: []
+        })
+    }
+
     componentDidMount() {
         // this.setState ({
          //    center: this.result.getAddress()
 		// });
-        const url = [
-            // Length issue
-            'https://gist.githubusercontent.com/farrrr/dfda7dd7fccfec5474d3/raw/758852bbc1979f6c4522ab4e92d1c92cba8fb0dc/data.json'
-        ].join("");
+
+        // commented part is for testing with many clusters
+        // https://tomchentw.github.io/react-google-maps/#markerclusterer
+        //const url = ['https://gist.githubusercontent.com/farrrr/dfda7dd7fccfec5474d3/raw/758852bbc1979f6c4522ab4e92d1c92cba8fb0dc/data.json'].join("");
+        // fetch(url)
+        //     .then(res => res.json())
+        //     .then(data => {
+        //             this.setState({
+        //                 markers: data.gyms
+        //         });
+        // });
+        this.setState({
+            markers: gymsMockJson.gyms
+        })
     }
 
     handler(new_center) {
@@ -66,7 +83,7 @@ class App extends Component {
 					</div>
 				</div>
 				<div className="footer">
-					<Map lat={this.state.center.lat} lng={this.state.center.lng}/>
+					<Map markers={this.state.markers} lat={this.state.center.lat} lng={this.state.center.lng}/>
 				</div>
 			</div>
     	);
