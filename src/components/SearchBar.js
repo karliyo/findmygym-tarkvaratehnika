@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from "react-places-autocomplete";
-import Map from './Map.js';
+// import Map from './Map.js'
+// import App from '../App.js';
 
 const renderSuggestion = ({ formattedSuggestion }) => (
   <div className="suggestion-item">
@@ -21,17 +22,21 @@ const onError = (status, clearSuggestions) => {
 
 // big ol class
 class SearchBar extends Component {
-  constructor(props) {
-      super(props);
+  constructor() {
+      super();
       this.state = {
-          latitude: 59.4369,
-          longitude: 24.7535,
           address: '',
-          geocodeResults: {lat: 59.43696079999999, lng: 24.753574699999945},
+          geocodeResults: {},
           loading: false,
       };
       this.handleSelect = this.handleSelect.bind(this);
       this.handleChange = this.handleChange.bind(this);
+
+  }
+
+  handleFormSubmit(submitEvent) {
+      submitEvent.preventDefault();
+      const address = this.state.geocodeResults;
   }
 
   handleSelect(address) {
@@ -44,11 +49,14 @@ class SearchBar extends Component {
                                 .then(
                                     ({ lat, lng }) => {
                                       this.setState({
-                                          latitude: lat,
-                                          longitude: lng,
                                           geocodeResults: {lat: lat, lng: lng},
                                           loading: false,
-                                      })
+                                      }, () => {
+                                          console.log(this.props);
+                                      });
+                                      this.props.handler(this.state.geocodeResults);
+
+                                    this.forceUpdate();
                                 })
                                   .catch(error => {
                                       console.log(error);
@@ -79,20 +87,20 @@ class SearchBar extends Component {
       id: 'main-search-input',
     };
 
-    const new_location = {
-        geocodeResults: this.state.geocodeResults
-    };
-    console.log(new_location.geocodeResults);
-    return (
-       <PlacesAutocomplete
-                    renderSuggestion={renderSuggestion}
-                    inputProps={inputProps}
-                    classNames={cssClasses}
-                    onSelect={this.handleSelect}
-                    onEnterKeyDown={this.handleSelect}
-                    onError={onError}
-                    shouldFetchSuggestions={shouldFetchSuggestions}
-       />
+    const new_location = {geocodeResults: this.state.geocodeResults};
+    // console.log(new_location.geocodeResults);
+
+      return (<div>
+               <PlacesAutocomplete
+                            renderSuggestion={renderSuggestion}
+                            inputProps={inputProps}
+                            classNames={cssClasses}
+                            onSelect={this.handleSelect}
+                            onEnterKeyDown={this.handleSelect}
+                            onError={onError}
+                            shouldFetchSuggestions={shouldFetchSuggestions}
+               />
+            </div>
     )
   }
 }
