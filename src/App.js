@@ -37,6 +37,10 @@ class App extends Component {
         // this.setState ({
          //    center: this.result.getAddress()
 		// });
+        const url = [
+            // Length issue
+            'https://gist.githubusercontent.com/farrrr/dfda7dd7fccfec5474d3/raw/758852bbc1979f6c4522ab4e92d1c92cba8fb0dc/data.json'
+        ].join("");
     }
 
     handler(new_center) {
@@ -48,7 +52,6 @@ class App extends Component {
     }
 
 	render() {
-        console.log("Current map center in App.js:" + this.state.center.lat + ", " + this.state.center.lng);
 		return (
 			<div className="wrapper">
 				<Header />
@@ -63,7 +66,7 @@ class App extends Component {
 					</div>
 				</div>
 				<div className="footer">
-					<Map defaultCenter={{lat:this.state.center.lat, lng:this.state.center.lng}} center={{lat:this.state.center.lat, lng:this.state.center.lng}}/>
+					<Map lat={this.state.center.lat} lng={this.state.center.lng}/>
 				</div>
 			</div>
     	);

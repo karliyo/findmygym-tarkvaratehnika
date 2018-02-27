@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 
 const GymMap = withGoogleMap(props => {
-    console.log(props);
     return <GoogleMap
-        defaultCenter={props.defaultCenter}
+        defaultCenter={{lat: props.lat, lng:props.lng}}
+		center={{lat: props.lat, lng:props.lng}}
         defaultZoom={10}>
     </GoogleMap>
 });
@@ -32,8 +32,8 @@ class Map extends Component {
 	render() {
 		return(
 			<GymMap
-				defaultCenter={this.props.defaultCenter}
-				center={this.props.center}
+				lat={this.props.lat}
+				lng={this.props.lng}
 				defaultZoom={this.props.zoom}
 				isMarkerShown={true}
 				markerPosition={this.props.marker}

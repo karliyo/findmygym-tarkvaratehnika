@@ -34,11 +34,6 @@ class SearchBar extends Component {
 
   }
 
-  handleFormSubmit(submitEvent) {
-      submitEvent.preventDefault();
-      const address = this.state.geocodeResults;
-  }
-
   handleSelect(address) {
       this.setState({
           address,
@@ -48,6 +43,7 @@ class SearchBar extends Component {
       geocodeByAddress(address).then(results => getLatLng(results[0]))
                                 .then(
                                     ({ lat, lng }) => {
+                                        // after successful location search, this sets new map center
                                       this.setState({
                                           geocodeResults: {lat: lat, lng: lng},
                                           loading: false,
@@ -55,8 +51,6 @@ class SearchBar extends Component {
                                           console.log(this.props);
                                       });
                                       this.props.handler(this.state.geocodeResults);
-
-                                    this.forceUpdate();
                                 })
                                   .catch(error => {
                                       console.log(error);
@@ -87,18 +81,15 @@ class SearchBar extends Component {
       id: 'main-search-input',
     };
 
-    const new_location = {geocodeResults: this.state.geocodeResults};
-    // console.log(new_location.geocodeResults);
-
-      return (<div>
-               <PlacesAutocomplete
-                            renderSuggestion={renderSuggestion}
-                            inputProps={inputProps}
-                            classNames={cssClasses}
-                            onSelect={this.handleSelect}
-                            onEnterKeyDown={this.handleSelect}
-                            onError={onError}
-                            shouldFetchSuggestions={shouldFetchSuggestions}
+    return (<div>
+                <PlacesAutocomplete
+                    renderSuggestion={renderSuggestion}
+                    inputProps={inputProps}
+                    classNames={cssClasses}
+                    onSelect={this.handleSelect}
+                    onEnterKeyDown={this.handleSelect}
+                    onError={onError}
+                    shouldFetchSuggestions={shouldFetchSuggestions}
                />
             </div>
     )
