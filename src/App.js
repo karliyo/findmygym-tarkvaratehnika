@@ -5,7 +5,16 @@ import Map from './components/Map.js';
 import SearchBar from './components/SearchBar.js';
 import Header from './components/Header.js';
 import gymsMockJson from './mock/gyms.json';
+import BgImage from './components/assets/bgimage.jpg';
 
+var sectionStyle = {
+  width:"100%",
+  height:"100%",
+  position:"absolute",
+  top:"0",
+  left:"0",
+  backgroundImage: "url(" +  BgImage  + ")"
+};
 // const bgColors = { "Default": "#81b71a",
 //                     "Blue": "#00B1E1",
 //                     "Cyan": "#37BC9B",
@@ -72,7 +81,7 @@ class App extends Component {
 		return (
 			<div className="wrapper">
 				<Header />
-				<div className="mid-div">
+				<div className="mid-div" style={ sectionStyle }>
 					<div className="search">
 						<SearchBar
                             handler = {this.handler}

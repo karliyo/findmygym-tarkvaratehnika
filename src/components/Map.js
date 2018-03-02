@@ -55,7 +55,7 @@ class Map extends Component {
 				markerPosition={this.props.marker}
 				containerElement = {
 					<div id="mapElement" style = {
-						{ height: '55%', width: '100%', bottom: '0', position:'absolute' }} />
+						{ height: '55%', width: '50%', bottom: '0', position:'absolute', left:'25%', right:'25%' }} />
 				}
 				mapElement = {<div style={{ height: '100%', zIndex:'10' }} />}
 			/>
