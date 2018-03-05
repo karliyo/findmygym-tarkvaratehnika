@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from "react-places-autocomplete";
+import history from './History.js';
+// import axios from 'axios';
 // import Map from './Map.js'
 // import App from '../App.js';
 
@@ -10,7 +12,6 @@ const renderSuggestion = ({ formattedSuggestion }) => (
     <small className="text-muted">{formattedSuggestion.secondaryText}</small>
   </div>
 )
-
 const cssClasses = {root: 'form-group', input: 'search-input', autocompleteContainer: 'autocomplete-container'};
 
 const shouldFetchSuggestions = ({ value }) => value.length > 2;
@@ -19,6 +20,12 @@ const onError = (status, clearSuggestions) => {
   console.log(status);
   clearSuggestions();
 };
+
+const EnterButton= () => (
+    <button className="btn" type="button">
+        <span>Enter</span>
+    </button>
+);
 
 // big ol class
 class SearchBar extends Component {
@@ -31,7 +38,6 @@ class SearchBar extends Component {
       };
       this.handleSelect = this.handleSelect.bind(this);
       this.handleChange = this.handleChange.bind(this);
-
   }
 
   handleSelect(address) {
@@ -44,13 +50,13 @@ class SearchBar extends Component {
                                 .then(
                                     ({ lat, lng }) => {
                                         // after successful location search, this sets new map center
-                                      this.setState({
-                                          geocodeResults: {lat: lat, lng: lng},
-                                          loading: false,
-                                      }, () => {
-                                          console.log(this.props);
-                                      });
-                                      this.props.handler(this.state.geocodeResults);
+                                        this.handleSubmit(-24, 55);
+                                        // this.props.router.push('/results')
+                                      // this.setState({
+                                      //     geocodeResults: {lat: lat, lng: lng},
+                                      //     loading: false,
+                                      // });
+                                      // console.log(this.state.geocodeResults);
                                 })
                                   .catch(error => {
                                       console.log(error);
@@ -58,12 +64,30 @@ class SearchBar extends Component {
                                           loading: false,
                                       })
                                   });
+
   };
+
+    handleSubmit(lat, lng) {
+        // console.log(this.state);
+        let initial_center = {lat: 59.4, lng: 24.7};
+        // lat = this.state.geocodeResults.lat;
+        // lng = this.state.geocodeResults.lng;
+        lat = initial_center.lat;
+        lng = initial_center.lng;
+        const location = {
+            pathname: '/results',
+
+        };
+
+        history.push(location);
+        console.log(this.props.history.action)
+    }
 
   handleChange(address) {
       this.setState({
           address,
       });
+      console.log(this.state.geocodeResults);
   }
 
   getAddress() {
