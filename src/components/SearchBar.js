@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from "react-places-autocomplete";
+import { withRouter } from 'react-router';
 import history from './History.js';
 // import axios from 'axios';
 // import Map from './Map.js'
@@ -76,11 +77,15 @@ class SearchBar extends Component {
         lng = initial_center.lng;
         const location = {
             pathname: '/results',
-
+            state: {
+                message: "hello, im a passed message!"
+            }
         };
-
-        history.push(location);
-        console.log(this.props.history.action)
+        history.push({
+            pathname: '/results',
+            lat: lat,
+            lng: lng
+        });
     }
 
   handleChange(address) {

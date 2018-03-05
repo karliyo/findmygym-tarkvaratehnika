@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Map from './Map.js';
 import Header from './Header.js';
 import gymsMockJson from '../mock/gyms.json';
+import PropTypes from 'prop-types';
 
 const initial_center = {lat: 59.4270203, lng: 24.714007};
 
@@ -15,7 +16,7 @@ class Result extends Component {
         super(props); //props will get logged.
         this.state = {
             center: initial_center,
-            defaultZoom: initial_zoom
+            defaultZoom: initial_zoom,
         };
         // this.updateState = this.updateState.bind(this);
     }
@@ -23,6 +24,7 @@ class Result extends Component {
     // updateState() {
     //     this.setState({center: {lat: this.props.lat, lng: this.props.lng}, defaultZoom: initial_zoom});
     // }
+
 
     componentWillMount() {
         this.setState({
@@ -34,7 +36,7 @@ class Result extends Component {
     componentDidMount() {
         this.setState({
             markers: gymsMockJson.gyms,
-        })
+        });
     }
 
     render() {
