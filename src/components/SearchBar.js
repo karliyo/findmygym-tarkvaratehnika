@@ -51,7 +51,7 @@ class SearchBar extends Component {
                                 .then(
                                     ({ lat, lng }) => {
                                         // after successful location search, this sets new map center
-                                        this.handleSubmit(-24, 55);
+                                        this.handleSubmit(lat, lng);
                                         // this.props.router.push('/results')
                                       // this.setState({
                                       //     geocodeResults: {lat: lat, lng: lng},
@@ -70,17 +70,17 @@ class SearchBar extends Component {
 
     handleSubmit(lat, lng) {
         // console.log(this.state);
-        let initial_center = {lat: 59.4, lng: 24.7};
+        // let initial_center = {lat: 59.4, lng: 24.7};
         // lat = this.state.geocodeResults.lat;
         // lng = this.state.geocodeResults.lng;
-        lat = initial_center.lat;
-        lng = initial_center.lng;
-        const location = {
-            pathname: '/results',
-            state: {
-                message: "hello, im a passed message!"
-            }
-        };
+        // lat = initial_center.lat;
+        // lng = initial_center.lng;
+        // const location = {
+        //     pathname: '/results',
+        //     state: {
+        //         message: "hello, im a passed message!"
+        //     }
+        // };
         history.push({
             pathname: '/results',
             lat: lat,

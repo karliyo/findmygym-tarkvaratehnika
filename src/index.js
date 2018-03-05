@@ -13,7 +13,7 @@ ReactDOM.render(
     <Router history={History}>
         <div>
             <Route exact path="/" component={App} />
-            <Route exact path="/results" render={(props) => <div>here u go {props.location.lat}<Result lat={props.location.lat} lng={props.location.lng}/></div>}
+            <Route exact path="/results" render={(props) => <Result lat={props.location.lat} lng={props.location.lng}/>}
             />
         </div>
     </Router>,
