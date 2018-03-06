@@ -7,8 +7,6 @@ class Header extends Component {
 	    return (
 			<div className="header">
 	            {/*<img id="logo" src={logo} alt="logo" />*/}
-	            <div id="header-center">
-	            </div>
 	            <nav id="header-nav-right">
 					<ul>
 						<li><Link to="/">Home</Link></li>

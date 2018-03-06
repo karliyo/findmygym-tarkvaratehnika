@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
-import SearchBar from 'material-ui-search-bar'
+import SearchBar from './SearchBar';
 
-// Material Search Bar
-// https://github.com/TeamWertarbyte/material-ui-search-bar
 class Search extends Component {
-  	render() {
-		return(
-		<SearchBar
-			hintText='Sisesta oma asukoht'
-			onChange = {() => console.log('onChange')}
-			onRequestSearch={() => console.log('onRequestSearch')}
-			style={{
-				marginLeft: '15px',
-				margin: '0 auto',
-				maxWidth: 800
-			}}
-		/>
-	)	;
-  	}
+    render() {
+        return(
+            <div className="mid-div">
+                <div className="search">
+                    <SearchBar handler = {this.handler}
+                               ref={result => {
+                                   this.result = result;
+                               }}
+                    />
+                </div>
+            </div>
+        )
+    }
 }
 
 export default Search;

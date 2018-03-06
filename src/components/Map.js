@@ -66,10 +66,8 @@ class Map extends Component {
 				defaultZoom={10}
 				isMarkerShown={true}
 				markerPosition={this.props.marker}
-				containerElement = {
-					<div id="mapElement" style = {{marginTop:'1.2vh', height: '100%', width: '100%', position:'fixed' }} />
-				}
-				mapElement = {<div style={{ height: '100%', zIndex:'10' }} />}
+				containerElement = {this.props.containerElement}
+				mapElement = {this.props.mapElement}
 			/>
 		);
 	}

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import './components/SearchBox.css';
-import Map from './components/Map';
 import SearchBar from './components/SearchBar';
 import Header from './components/Header.js';
-import gymsMockJson from './mock/gyms.json';
-import ModalDialog from './components/ModalDialog';
-import Modal, {closeStyle} from 'simple-react-modal'
+import Search from './components/Search.js';
 
-
+// import Map from './components/Map';
+// import gymsMockJson from './mock/gyms.json';
+// import ModalDialog from './components/ModalDialog';
+// import Modal, {closeStyle} from 'simple-react-modal'
 // const bgColors = { "Default": "#81b71a",
 //                     "Blue": "#00B1E1",
 //                     "Cyan": "#37BC9B",
@@ -74,7 +74,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="wrapper">
-				<Header />
+
 				<div className="mid-div">
 					<div className="search">
 						<SearchBar handler = {this.handler}
