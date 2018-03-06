@@ -48,7 +48,8 @@ class Result extends Component {
 
                     </div>
                     <div className="results-map">
-                        <Map ref="result-map" markers={this.state.markers} lat={this.props.lat} lng={this.props.lng} defaultZoom={10}/>
+                        {this.props.lat ? <Map ref="result-map" markers={this.state.markers} lat={this.props.lat} lng={this.props.lng} defaultZoom={10}/> :
+                            <Map ref="result-map" markers={this.state.markers} lat={initial_center.lat} lng={initial_center.lng} defaultZoom={10}/>}
                     </div>
                 </div>
             </div>

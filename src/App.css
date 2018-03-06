@@ -1,7 +1,7 @@
 body, html, #root {
-  height: 100vh;
-  min-height: 100vh;
-  width: 100vw;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
   font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -9,7 +9,11 @@ body, html, #root {
   font-size: 25px;
   line-height: 1.5;
 	/*background-color: lightblue;*/
-	background-image: url('./components/assets/bg.jpeg');
+	background: url('./components/assets/bg.jpeg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 
 }
 
@@ -36,7 +40,7 @@ body, html, #root {
 	width: 100%;
 	top: 0;
 	position: fixed;
-	margin-bottom: 30px;
+	margin-bottom: 50px;
 }
 
 .mid-div {
@@ -56,7 +60,6 @@ body, html, #root {
 }
 
 .results-map {
-	height: 100%;
 	min-width:400px;
 	width: 80%;
 	flex-grow: 1000;
@@ -132,11 +135,4 @@ body, html, #root {
 	#header-nav-right li {
 		padding: 0px;
 	}
-}
-
-#mapelement {
-	height: 30%;
-	width: 100%;
-	bottom: 0;
-	position:absolute
 }
