@@ -7,3 +7,5 @@ Veebikeskkonna arendus koosneb kolmest iteratsioonist, millest igaüks eraldi ko
 - Back-end - Spring boot
 - Front-end -  React
 - Andmebaas -  MySQL
+### Live demo:
+https://g.supa.ee
